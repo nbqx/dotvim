@@ -10,3 +10,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
+[submodule "bundle/quickrun"]
+	path = bundle/quickrun
+	url = http://github.com/thinca/vim-quickrun.git
