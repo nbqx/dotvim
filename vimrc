@@ -108,6 +108,28 @@ nmap <C-Down> ddp
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
+" groovy.vim
+au BufNewFile,BufRead *.groovy setf groovy
+if did_filetype()
+  finish
+endif
+if getline(1) =~ '^#!.*[/\\]groovy\>'
+  setf groovy
+endif
+
+" actionscript.vim
+au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.mxml set filetype=mxml
+
+" scala.vim
+au BufNewFile,BufRead *.scala setf scala
+if did_filetype()
+  finish
+endif
+if getline(1) =~ '^#!.*[/\\]scala\>'
+  setf scala
+endif
+
 " NERD_commenter(oldskool!!)
 map <Leader># ,c<space>
 let NERDShutUp=1
