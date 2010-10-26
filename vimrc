@@ -108,5 +108,29 @@ nmap <C-Down> ddp
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
+" NERD_commenter(oldskool!!)
+map <Leader># ,c<space>
+let NERDShutUp=1
 
+" neocomplcache
+hi Pmenu cterm=NONE ctermfg=Black ctermbg=White
+hi PmenuSel cterm=bold ctermfg=White ctermbg=DarkBlue
+hi PmenuSbar term=NONE cterm=NONE
+hi PmenuThumb term=reverse cterm=reverse
+
+let g:NeoComplCache_DisableAutoComplete = 1
+let g:NeoComplCache_PreviousKeywordCompletion = 1
+
+"omni
+inoremap <expr><C-h> &filetype == 'vim' ? "\<C-x>\<C-v>\<C-p>" : "\<C-x>\<C-o>\<C-p>"
+"neocomplcache
+inoremap <expr><C-n> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
+"<C-p> => keyword補完
+inoremap <expr><C-z> pubvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
+
+" unite.vim
+let g:unite_update_time = 1000
+nnoremap <Leader>F :<C-u>Unite buffer file_mru file<Return>
+nnoremap <Leader>f :<C-u>Unite file<Return>
+call unite#set_substitute_pattern('files', '[[:alnum:]]', '*\0')
 
