@@ -1,0 +1,57 @@
+import processing.core.*
+import javax.swing.JFrame
+import ddf.minim.Minim
+import ddf.minim.AudioInput
+import org.tritonus.share.sampled.FloatSampleBuffer
+
+class App extends PApplet{
+	def exp
+		def minim
+		def input
+
+		void setup(){
+			size(${1:width},${2:height})
+
+				minim = new Minim(this)
+				input = minim.getLineIn(Minim.STEREO,512)
+
+				smooth()
+		}
+
+	void draw(){
+		before()
+			main()
+			after()
+	}
+
+	def before(){
+		background(0)
+	}
+
+	def main(){
+		def ctr = height/2 as Float
+		def v = 1000
+		stroke(255)
+		(input.bufferSize()-1).times{i->
+			line(i, ctr+input.left.get(i)*v as Float, i+1, ctr+input.left.get(i+1)*v as Float)
+			line(i, ctr+input.right.get(i)*v as Float, i+1, ctr+input.right.get(i+1)*v as Float)
+		}
+	}
+
+	def after(){}
+
+	def update(String name, Closure clo){
+		exp = new ExpandoMetaClass(this.class,false)
+			clo.delegate = this
+			exp."${name}" = clo
+			exp.initialize()
+			this.metaClass = exp
+	}
+}
+
+	jframe = new JFrame(title:"improvisation",resizable:true)
+	app = new App()
+	jframe.add(app)
+	app.init()
+jframe.pack()
+	jframe.visible = ${3:visible}

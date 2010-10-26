@@ -1,0 +1,60 @@
+import processing.core.*
+import javax.swing.JFrame
+import oscP5.*
+import netP5.*
+
+class OSCClient extends PApplet{
+  def address
+  def port
+  def osc
+  def location
+
+  OSCClient(String adr, Integer prt){
+    address = adr
+    port = prt
+  }
+
+  void setup(){
+    size(${1:width},${2:height})
+		osc = new OscP5(this,12000)
+    location = new NetAddress(address,port)
+	}
+
+  void draw(){
+		before()
+		doing()
+		after()
+  }
+
+	def before = {
+		background(0)
+	}
+
+	def doing = {
+	}
+
+	def after = {}
+
+  def update(String name, Closure clo){
+    clo.delegate = this
+    this."${name}" = clo
+  }
+
+	void mousePressed(){
+		def mes = new OscMessage("/test")
+		mes.add("this is test")
+		osc.send(mes, location)
+	}
+
+}
+
+app = new OSCClient('localhost',5000)
+app.init()
+jframe = new JFrame("improvisation")
+jframe.with{
+	add(app)
+	pack()
+	defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+	resizable = true
+	visible = ${3:visible}
+}

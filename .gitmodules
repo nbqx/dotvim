@@ -13,3 +13,6 @@
 [submodule "bundle/quickrun"]
 	path = bundle/quickrun
 	url = http://github.com/thinca/vim-quickrun.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = http://github.com/msanders/snipmate.vim.git

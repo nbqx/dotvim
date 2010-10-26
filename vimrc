@@ -112,6 +112,16 @@ vmap <C-Down> xp`[V`]
 map <Leader># ,c<space>
 let NERDShutUp=1
 
+" nerdtree
+nnoremap <f12> :NERDTreeToggle<CR>
+
+" quickrun
+if !exists('g:quickrun_config')
+	let g:quickrun_config = {}
+	let g:quickrun_config['*'] = {}
+endif
+let g:quickrun_config['*'].split = ''
+
 " neocomplcache
 hi Pmenu cterm=NONE ctermfg=Black ctermbg=White
 hi PmenuSel cterm=bold ctermfg=White ctermbg=DarkBlue

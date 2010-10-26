@@ -1,0 +1,42 @@
+import processing.core.*
+import javax.swing.JFrame
+
+class App extends PApplet{
+	
+	void setup(){
+		size(${1:width},${2:height})
+		background(0)
+		smooth()
+	}
+
+	void draw(){
+		before()
+		doing()
+		after()
+	}
+
+	def before = {}
+
+	def doing = {
+		strokeWeight(random(15,45))
+		stroke(random(200),random(200),0)
+		point(random(width),random(height))
+	}
+
+	def after = {}
+
+	def update(String name, Closure clo){
+		clo.delegate = this
+		this."${name}" = clo
+	}
+}
+
+app = new App()
+app.init()
+jframe = new JFrame(title:"improvisation",resizable:true).with{
+	add(app)
+	pack()
+	defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+	resizable = true
+	visible = ${3:visible}
+}
