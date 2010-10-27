@@ -8,7 +8,7 @@ set fenc=utf-8
 set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 
 "color
-color colorer
+color blackboard
 
 syntax on
 set number

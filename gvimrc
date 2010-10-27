@@ -27,3 +27,16 @@ set imdisable
 set iminsert=0 imsearch=0
 " 日本語入力中のカーソルの色をかえる
 highlight CursorIM guifg=NONE guibg=Red
+
+"winmove.vim wiz submode.vim
+let g:wm_move_down = ''
+let g:wm_move_up = ''
+let g:wm_move_left = ''
+let g:wm_move_right =''
+
+let g:submode_timeoutlen = 1000000
+call submode#enter_with('move-window', 'n', '', ',w', '<Nop>')
+call submode#leave_with('move-window', 'n', '', '<Esc>')
+call submode#map('move-window', 'n', 'r', 'j', '<Plug>(winmove-down)')
+call submode#map('move-window', 'n', 'r', 'k', '<Plug>(winmove-up)')
+
