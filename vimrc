@@ -74,6 +74,14 @@ set incsearch
 "外部エディタで編集中のファイルが変更されたら自動で読み直す
 set autoread
 
+"カッコの入力したら中に移動
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap "" ""<Left>
+imap '' ''<Left>
+imap <> <><Left>
+
 "tab
 "set expandtab
 set tabstop=2
