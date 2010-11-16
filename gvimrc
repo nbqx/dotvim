@@ -21,6 +21,10 @@ set guioptions-=T
 " 背景を半透明に
 set transparency=15
 
+" ClipBoard
+set clipboard=unnamed
+set guioptions+=a
+
 " 自動IMオン/オフ
 set imdisable
 " 挿入モード・検索モードでのデフォIME状態の設定
