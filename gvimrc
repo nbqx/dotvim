@@ -22,8 +22,10 @@ set guioptions-=T
 set transparency=15
 
 " ClipBoard
-set clipboard=unnamed
-set guioptions+=a
+"set clipboard=unnamed
+"set guioptions+=a
+set clipboard+=autoselect
+set clipboard+=unnamed
 
 " 自動IMオン/オフ
 set imdisable

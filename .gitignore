@@ -1,1 +1,6 @@
 .DS_Store
+autoload/vimclojure.vim
+ftdetect/*
+ftplugin/*
+indent/*
+plugin/clojure.vim
