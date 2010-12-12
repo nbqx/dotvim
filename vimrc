@@ -174,3 +174,10 @@ nnoremap <Leader>F :<C-u>Unite buffer file_mru file<Return>
 nnoremap <Leader>f :<C-u>Unite file<Return>
 call unite#set_substitute_pattern('files', '[[:alnum:]]', '*\0')
 
+" autoload/jeetlib.vim
+call jeetlib#_UI_StatusLine_DefineSpecialHighlights()
+if has("autocmd")
+    au ColorScheme * call jeetlib#_UI_StatusLine_DefineSpecialHighlights()
+endif
+set statusline=%!jeetlib#_UI_StatusLine_Compose()
+
