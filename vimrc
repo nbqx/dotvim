@@ -181,3 +181,5 @@ if has("autocmd")
 endif
 set statusline=%!jeetlib#_UI_StatusLine_Compose()
 
+" Titanium Mobile Build Server
+nnoremap <unique> <silent> <Leader>ti :call system('curl http://localhost:12345 &')<CR>

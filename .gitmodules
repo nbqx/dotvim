@@ -19,3 +19,9 @@
 [submodule "bundle/vim-submode"]
 	path = bundle/vim-submode
 	url = http://github.com/kana/vim-submode.git
+[submodule "/Users/nbqx/.vim/bundle/unite-colorscheme"]
+	path = /Users/nbqx/.vim/bundle/unite-colorscheme
+	url = https://github.com/ujihisa/unite-colorscheme.git
+[submodule "/Users/nbqx/.vim/bundle/unite-font"]
+	path = /Users/nbqx/.vim/bundle/unite-font
+	url = https://github.com/ujihisa/unite-font.git

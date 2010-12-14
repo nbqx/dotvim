@@ -1,6 +1,6 @@
 " 書体の設定
 set antialias
-set guifont=EnvyCodeR:h13
+set guifont=EnvyCodeR:h14
 
 " ウィンドウのサイズ
 set columns=140
